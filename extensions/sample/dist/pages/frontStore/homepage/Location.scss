@@ -1,0 +1,148 @@
+.location-section {
+  background-color: rgb(246, 243, 236);
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 500px;
+
+  // 左上角：地址
+  .address-text {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  // 右上角：邮编
+  .postal-code {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+
+    p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+  }
+
+  // 右下角：图片
+  .location-image {
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  // 平板适配
+  @media only screen and (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+    min-height: 450px;
+
+    .address-text {
+      top: 3rem;
+      left: 1.5rem;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .postal-code {
+      top: 3rem;
+      right: 1.5rem;
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .location-image {
+      bottom: 3rem;
+      right: 1.5rem;
+      width: 55%;
+    }
+  }
+
+  // 手机端适配
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+    min-height: 400px;
+
+    .address-text {
+      top: 2rem;
+      left: 1rem;
+      right: 1rem;
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .postal-code {
+      top: 5rem;
+      right: 1rem;
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .location-image {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 8rem;
+      border-radius: 10px;
+    }
+  }
+
+  // 小屏手机适配
+  @media only screen and (max-width: 480px) {
+    padding: 1.5rem 0.75rem;
+    min-height: 350px;
+
+    .address-text {
+      top: 1.5rem;
+      left: 0.75rem;
+      right: 0.75rem;
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .postal-code {
+      top: 4.5rem;
+      right: 0.75rem;
+
+      p {
+        font-size: 0.75rem;
+      }
+    }
+
+    .location-image {
+      margin-top: 7rem;
+      border-radius: 8px;
+    }
+  }
+}

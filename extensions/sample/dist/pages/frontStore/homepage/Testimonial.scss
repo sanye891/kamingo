@@ -1,0 +1,204 @@
+.testimonial-section {
+  background-color: rgb(246, 243, 236);
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // 左右各一半
+    grid-template-rows: auto auto;
+    gap: 3rem 1.5rem; // 行间距3rem，列间距1.5rem（缩小列间距）
+
+    // 左上：圆形图片
+    .profile-image {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      img {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%; // 圆形
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    // 右上：引用文字
+    .quote-text {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0; // 去掉左边距
+
+      .quote {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+
+      .author {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 500;
+      }
+    }
+
+    // 左下：描述文字
+    .description-text {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      padding-right: 2rem;
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #333;
+      }
+    }
+
+    // 右下：长方形图片
+    .collage-image {
+      grid-column: 2;
+      grid-row: 2;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  // 平板适配
+  @media only screen and (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+
+    .testimonial-grid {
+      gap: 2rem;
+
+      .profile-image img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .quote-text {
+        padding-left: 1.5rem;
+
+        .quote {
+          font-size: 0.95rem;
+        }
+
+        .author {
+          font-size: 0.85rem;
+        }
+      }
+
+      .description-text {
+        padding-right: 1.5rem;
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  // 手机端适配
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+      gap: 2rem;
+
+      .profile-image {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: center;
+
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      .quote-text {
+        grid-column: 1;
+        grid-row: 2;
+        padding-left: 0;
+        text-align: center;
+
+        .quote {
+          font-size: 0.9rem;
+        }
+
+        .author {
+          font-size: 0.8rem;
+        }
+      }
+
+      .description-text {
+        grid-column: 1;
+        grid-row: 3;
+        padding-right: 0;
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+      .collage-image {
+        grid-column: 1;
+        grid-row: 4;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  // 小屏手机适配
+  @media only screen and (max-width: 480px) {
+    padding: 1.5rem 0.75rem;
+
+    .testimonial-grid {
+      gap: 1.5rem;
+
+      .profile-image img {
+        width: 180px;
+        height: 180px;
+      }
+
+      .quote-text {
+        .quote {
+          font-size: 0.85rem;
+        }
+
+        .author {
+          font-size: 0.75rem;
+        }
+      }
+
+      .description-text p {
+        font-size: 0.8rem;
+      }
+
+      .collage-image {
+        border-radius: 10px;
+      }
+    }
+  }
+}

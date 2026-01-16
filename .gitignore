@@ -3,8 +3,8 @@ node_modules/
 
 # Build outputs
 .evershop/build/
-extensions/*/dist/
-themes/*/dist/
+# extensions/*/dist/  # 注释掉，需要提交dist
+# themes/*/dist/      # 注释掉，需要提交dist
 
 # Keep source files
 !themes/*/src/
