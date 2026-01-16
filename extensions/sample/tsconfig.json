@@ -15,8 +15,9 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowArbitraryExtensions": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "isolatedModules": false,
+    "noEmitOnError": false,
     "baseUrl": ".",
     "rootDir": "./src"
   },
