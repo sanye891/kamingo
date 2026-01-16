@@ -1,0 +1,258 @@
+.sense-intro-section {
+  background-color: rgb(246, 243, 236);
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  // 标题和描述
+  .intro-text {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .intro-title {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 2rem;
+    }
+
+    .intro-description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto 0.5rem;
+
+      .highlight {
+        text-decoration: underline;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    .intro-source {
+      font-size: 0.9rem;
+      color: #999;
+      font-style: italic;
+    }
+  }
+
+  // 图片容器
+  .image-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    background-color: rgba(200, 190, 170, 0.3);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+
+    // 左边：长方形图片
+    .image-left {
+      flex: 0 0 450px;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // 右边：椭圆形 GIF
+    .image-right {
+      flex: 0 0 350px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e8e4dc;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // Awards 部分
+  .awards-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    border-radius: 20px;
+
+    .award-badge {
+      flex-shrink: 0;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; // 圆形
+        object-fit: cover;
+      }
+    }
+
+    .award-text {
+      .award-label {
+        font-size: 0.9rem;
+        color: #999;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .award-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #000;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  // 平板适配
+  @media only screen and (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+
+    .intro-text {
+      margin-bottom: 3rem;
+
+      .intro-title {
+        font-size: 1.75rem;
+      }
+
+      .intro-description {
+        font-size: 0.95rem;
+      }
+    }
+
+    .image-container {
+      padding: 2rem;
+      gap: 1.5rem;
+
+      .image-right {
+        flex: 0 0 280px;
+      }
+    }
+
+    .awards-section {
+      gap: 2rem;
+      padding: 2rem;
+
+      .award-badge img {
+        width: 120px;
+      }
+
+      .award-text .award-title {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  // 手机端适配
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .intro-text {
+      margin-bottom: 2rem;
+
+      .intro-title {
+        font-size: 1.5rem;
+      }
+
+      .intro-description {
+        font-size: 0.9rem;
+      }
+    }
+
+    .image-container {
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.5rem;
+
+      .image-left,
+      .image-right {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .image-left {
+        aspect-ratio: 4 / 3;
+        border-radius: 15px;
+      }
+
+      .image-right {
+        aspect-ratio: 1;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    .awards-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+
+      .award-badge img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .award-text .award-title {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // 小屏手机适配
+  @media only screen and (max-width: 480px) {
+    padding: 1.5rem 0.75rem;
+
+    .intro-text {
+      .intro-title {
+        font-size: 1.25rem;
+      }
+
+      .intro-description {
+        font-size: 0.85rem;
+      }
+    }
+
+    .image-container {
+      padding: 1rem;
+      border-radius: 20px;
+
+      .image-left {
+        border-radius: 12px;
+      }
+
+      .image-right {
+        max-width: 250px;
+      }
+    }
+
+    .awards-section {
+      border-radius: 12px;
+      padding: 1rem;
+
+      .award-badge img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .award-text .award-title {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.hero-video-section {
+  background-color: rgb(246, 243, 236);
+  padding: 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .hero-video-container {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+
+    .full-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      margin-top: -3rem; // 往上移动
+    }
+  }
+
+  .hero-description {
+    padding-left: 1rem;
+
+    .description-text {
+      font-size: 24.4224px;
+      font-weight: 500;
+      color: #000;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .availability-text {
+      font-size: 24.4224px;
+      color: #666;
+      margin: 0 0 1rem 0;
+    }
+
+    .learn-more-btn {
+      background-color: #e89b7e;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 0.75rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #d88a6d;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(232, 155, 126, 0.4);
+      }
+    }
+  }
+
+  // 平板适配
+  @media only screen and (max-width: 1024px) {
+    padding: 1.5rem 1.5rem;
+  }
+
+  // 手机端适配
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 1rem;
+
+    .hero-video-container {
+      border-radius: 12px;
+    }
+
+    .hero-description {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+
+  // 小屏手机适配
+  @media only screen and (max-width: 480px) {
+    padding: 1rem 0.75rem;
+
+    .hero-video-container {
+      border-radius: 10px;
+    }
+
+    .hero-description {
+      .learn-more-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

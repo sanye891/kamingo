@@ -1,0 +1,189 @@
+// 全局样式
+body {
+  background-color: rgb(246, 243, 236) !important;
+}
+
+#app {
+  background-color: rgb(246, 243, 236);
+}
+
+.page-wrapper,
+.main-content,
+.container {
+  background-color: rgb(246, 243, 236);
+}
+
+// 隐藏面包屑导航
+.breadcrumb,
+.breadcrumbs,
+[class*="breadcrumb"] {
+  display: none !important;
+}
+
+// 隐藏默认的 Header
+.header.px-6 {
+  display: none !important;
+}
+
+// 隐藏中间的 logo 区域
+.header__middle__center {
+  display: none !important;
+}
+
+// 隐藏默认页脚（但不隐藏自定义页脚）
+footer:not(.custom-footer),
+.footer:not(.custom-footer) {
+  display: none !important;
+}
+
+// 隐藏支付图标和版权信息
+.payment-methods,
+.copyright,
+[class*="payment"],
+[class*="copyright"] {
+  display: none !important;
+}
+
+// 自定义 Header 样式
+.custom-header {
+  background-color: rgb(246, 243, 236);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  margin-top: -1rem; // 稍微往上移动一点
+
+  .custom-header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-logo {
+    .logo-link {
+      font-size: 1.75rem; // 增大字体
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #000;
+      }
+
+      &.instagram-link,
+      &.user-link {
+        svg {
+          transition: transform 0.2s;
+        }
+
+        &:hover svg {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    // 功能按钮容器样式
+    #search-box-placeholder,
+    #user-icon-placeholder,
+    #mini-cart-placeholder {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // 手机端适配
+  @media only screen and (max-width: 768px) {
+    padding: 0.75rem 1rem;
+    margin-top: 0; // 手机端不往上移
+
+    .header-logo {
+      .logo-link {
+        font-size: 1.2rem;
+      }
+    }
+
+    .header-right {
+      gap: 0.8rem;
+
+      .nav-link {
+        font-size: 0.9rem;
+
+        // 在手机端隐藏 home 和 shop 文字，只保留图标
+        &:not(.instagram-link):not(.user-link) {
+          display: none;
+        }
+      }
+
+      .nav-divider {
+        display: none;
+      }
+    }
+  }
+
+  // 小屏手机适配
+  @media only screen and (max-width: 480px) {
+    padding: 0.75rem 0.75rem;
+    margin-top: 0; // 手机端不往上移
+
+    .header-logo {
+      .logo-link {
+        font-size: 1.1rem;
+      }
+    }
+
+    .header-right {
+      gap: 0.6rem;
+    }
+  }
+}
+
+// 隐藏默认的中间 logo
+.header__middle__center {
+  display: none !important;
+}
+
+// 确保搜索、用户、购物车图标样式正确
+.search__box,
+.mini__cart__wrapper,
+.user-icon {
+  a,
+  button {
+    color: #333;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
