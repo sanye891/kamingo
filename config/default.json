@@ -13,13 +13,11 @@
     ],
     "theme": "sample",
     "session": {
-      "secret": "change-this-to-a-random-string-in-production",
-      "cookie": {
-        "maxAge": 2592000000,
-        "httpOnly": true,
-        "sameSite": "lax",
-        "secure": false
-      }
+      "maxAge": 2592000000,
+      "resave": false,
+      "saveUninitialized": false,
+      "cookieSecret": "your-random-secret-key-here",
+      "cookieName": "sid"
     }
   }
 }
