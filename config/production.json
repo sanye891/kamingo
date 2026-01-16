@@ -1,20 +1,11 @@
 {
   "system": {
-    "express": {
-      "trustProxy": true
-    },
     "session": {
-      "maxAge": 2592000000,
+      "maxAge": 86400000,
       "resave": false,
       "saveUninitialized": false,
       "cookieSecret": "k8mN9pQ2rT5vW8xZ1aB4cD7eF0gH3jK6mL9nP2qR5sT8uV1wX4yZ7",
-      "cookieName": "sid",
-      "proxy": 1,
-      "cookie": {
-        "secure": true,
-        "httpOnly": true,
-        "sameSite": "lax"
-      }
+      "cookieName": "sid"
     }
   }
 }

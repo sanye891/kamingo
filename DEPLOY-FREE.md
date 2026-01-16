@@ -80,14 +80,15 @@ postgresql://postgres.xxxxx:[YOUR-PASSWORD]@aws-0-ap-southeast-1.pooler.supabase
 
 点击 "Advanced"，然后点击 "Add Environment Variable"，添加以下变量：
 
+#### 数据库配置（从 Supabase 获取）
+
 ```
 DB_HOST=aws-0-ap-southeast-1.pooler.supabase.com
 DB_PORT=6543
 DB_NAME=postgres
 DB_USER=postgres.你的项目ID
 DB_PASSWORD=你的数据库密码
-DB_SSLMODE=require
-NODE_ENV=production
+DB_SSLMODE=no-verify
 ```
 
 **重要**：从 Supabase 连接字符串中提取这些信息：
@@ -95,6 +96,32 @@ NODE_ENV=production
 - `DB_HOST`: `@` 后面到 `:6543` 之前的部分
 - `DB_USER`: `postgresql://` 后面到 `:` 之前的部分
 - `DB_PASSWORD`: 你设置的密码
+- `DB_SSLMODE`: 必须设置为 `no-verify`（Supabase 的 SSL 证书问题）
+
+#### Node 环境
+
+```
+NODE_ENV=production
+```
+
+#### JWT 密钥（必需！）
+
+**生成 4 个随机密钥**：在本地运行以下命令 4 次
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+然后添加这 4 个环境变量（每个使用不同的随机密钥）：
+
+```
+JWT_ADMIN_SECRET=第1个随机密钥
+JWT_ADMIN_REFRESH_SECRET=第2个随机密钥
+JWT_CUSTOMER_SECRET=第3个随机密钥
+JWT_CUSTOMER_REFRESH_SECRET=第4个随机密钥
+```
+
+**总共需要添加 11 个环境变量！**
 
 ### 5. 部署
 
