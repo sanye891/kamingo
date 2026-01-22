@@ -24,8 +24,8 @@ RUN if [ -f extensions/sample/package.json ]; then \
       cd extensions/sample && npm run tsc && cd ../..; \
     fi
 
-# 构建EverShop应用
-RUN npm run build
+# 构建EverShop应用（限制内存使用）
+RUN NODE_OPTIONS="--max-old-space-size=512" npm run build
 
 # 删除devDependencies以减小镜像大小
 RUN npm prune --production

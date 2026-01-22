@@ -41,6 +41,8 @@ services:
       DB_SSLMODE: disable
       # Node环境
       NODE_ENV: production
+      # 增加Node.js内存限制（适用于小内存服务器）
+      NODE_OPTIONS: "--max-old-space-size=512"
       # JWT密钥（必需！）
       JWT_ADMIN_SECRET: ${JWT_ADMIN_SECRET}
       JWT_ADMIN_REFRESH_SECRET: ${JWT_ADMIN_REFRESH_SECRET}
