@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export default function Hello() {
     return (React.createElement("div", { className: "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white shadow-lg" },
         React.createElement("div", { className: "container mx-auto px-6 py-4" },
@@ -11,7 +11,7 @@ export default function Hello() {
                         React.createElement("h1", { className: "text-xl font-bold tracking-wide" }, "Hello, Admin!"),
                         React.createElement("p", { className: "text-blue-100 text-sm opacity-90" },
                             "Welcome to your dashboard. You can edit this component at",
-                            ' ',
+                            " ",
                             React.createElement("code", null, "`extensions/sample/src/pages/admin/all/Hello.tsx`"),
                             "."),
                         React.createElement("p", { className: "text-blue-200 text-xs mt-1" }, "You can also remove this by disabling the extension `sample`."))),
@@ -24,7 +24,7 @@ export default function Hello() {
         React.createElement("div", { className: "h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-30" })));
 }
 export const layout = {
-    areaId: 'content',
-    sortOrder: 0
+    areaId: "content",
+    sortOrder: 0,
 };
 //# sourceMappingURL=Hello.js.map

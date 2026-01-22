@@ -11,13 +11,6 @@
         "enabled": true
       }
     ],
-    "theme": "sample",
-    "session": {
-      "maxAge": 2592000000,
-      "resave": false,
-      "saveUninitialized": false,
-      "cookieSecret": "your-random-secret-key-here",
-      "cookieName": "sid"
-    }
+    "theme": "sample"
   }
 }

@@ -13,14 +13,22 @@ WORKDIR /app
 # 复制package文件
 COPY package*.json ./
 
-# 安装生产依赖
-RUN npm ci --only=production
+# 安装所有依赖（包括devDependencies，因为需要TypeScript编译）
+RUN npm ci
 
 # 复制所有项目文件
 COPY . .
 
+# 编译扩展中的TypeScript文件（如果存在）
+RUN if [ -f extensions/sample/package.json ]; then \
+      cd extensions/sample && npm run tsc && cd ../..; \
+    fi
+
 # 构建EverShop应用
 RUN npm run build
+
+# 删除devDependencies以减小镜像大小
+RUN npm prune --production
 
 # 暴露3000端口
 EXPOSE 3000

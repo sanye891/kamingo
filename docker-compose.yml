@@ -41,6 +41,11 @@ services:
       DB_SSLMODE: disable
       # Node环境
       NODE_ENV: production
+      # JWT密钥（必需！）
+      JWT_ADMIN_SECRET: ${JWT_ADMIN_SECRET}
+      JWT_ADMIN_REFRESH_SECRET: ${JWT_ADMIN_REFRESH_SECRET}
+      JWT_CUSTOMER_SECRET: ${JWT_CUSTOMER_SECRET}
+      JWT_CUSTOMER_REFRESH_SECRET: ${JWT_CUSTOMER_REFRESH_SECRET}
     depends_on:
       postgres:
         condition: service_healthy

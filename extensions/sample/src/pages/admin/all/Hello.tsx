@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Hello() {
   return (
@@ -18,7 +18,7 @@ export default function Hello() {
             <div>
               <h1 className="text-xl font-bold tracking-wide">Hello, Admin!</h1>
               <p className="text-blue-100 text-sm opacity-90">
-                Welcome to your dashboard. You can edit this component at{' '}
+                Welcome to your dashboard. You can edit this component at{" "}
                 <code>`extensions/sample/src/pages/admin/all/Hello.tsx`</code>.
               </p>
               <p className="text-blue-200 text-xs mt-1">
@@ -51,6 +51,6 @@ export default function Hello() {
 }
 
 export const layout = {
-  areaId: 'content',
-  sortOrder: 0
+  areaId: "content",
+  sortOrder: 0,
 };
