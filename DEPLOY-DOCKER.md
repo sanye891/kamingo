@@ -50,8 +50,8 @@ cd kamingo
 复制并编辑环境变量文件：
 
 ```bash
-cp .env.production .env.production.local
-nano .env.production.local
+cp .env.production.example .env.production
+nano .env.production
 ```
 
 **必须修改的配置：**
@@ -80,10 +80,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 # 如果项目包含TypeScript扩展，先编译
 cd extensions/sample && npm run tsc && cd ../..
 
-# 使用自定义环境变量文件启动
-docker-compose --env-file .env.production.local up -d
-
-# 或者使用默认的 .env.production
+# 启动服务
 docker-compose --env-file .env.production up -d
 ```
 
