@@ -3,17 +3,19 @@ node_modules/
 
 # Build outputs
 .evershop/build/
-# extensions/*/dist/  # 注释掉，需要提交dist
-# themes/*/dist/      # 注释掉，需要提交dist
+
+# Compiled extensions and themes (KEEP THESE - needed for deployment)
+# extensions/*/dist/
+# themes/*/dist/
 
 # Keep source files
 !themes/*/src/
 !extensions/*/src/
 
-# Environment
+# Environment files
 .env.local
 .env.*.local
-.env.production  # 不要上传生产环境配置（包含敏感信息）
+.env.production
 
 # Logs
 *.log
